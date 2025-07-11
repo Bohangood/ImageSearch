@@ -1,49 +1,129 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.header{
-    display: flex;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(79, 79, 255);
-}
-.main{
-    
-    justify-items:center;
-    height: 1px;
-}
-.footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.numberPage{
-    margin-left: 10px;
-    margin-right: 10px;
-}
-.btnPrevious{
-    width: 60px;
-    height: 30px;
-    background-color: rgb(79, 79, 255);
-    border:none;
-    color: white;
-    border-radius: 10px;
-}
-.btnNext{
-    width: 60px;
-    height: 30px;
-    background-color: rgb(79, 79, 255);
-    border:none;
-    color: white;
-    border-radius: 10px;
-}
-.inputSearch{
-    height: 20px;
-    width: 300px;
-}
-.btnSearch{
-    height: 24px;
 
+.header {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(79, 79, 255);
+}
+
+.inputSearch {
+  height: 24px;
+  width: 300px;
+  margin-left: 10px;
+}
+
+.btnSearch {
+  height: 28px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+.image-item {
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 8px;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.numberPage {
+  margin: 0 10px;
+}
+
+.btnPrevious,
+.btnNext {
+  width: 80px;
+  height: 32px;
+  background-color: rgb(79, 79, 255);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btnPrevious:disabled,
+.btnNext:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.spiner {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex; /* буде активний тільки після видалення hidden */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: red;
 }

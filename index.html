@@ -2,31 +2,43 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImageSearch</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ImageSearch</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="header">
-        <form class="fromSearch">
-            <button class="btnSearch">Search</button>
-            <input class="inputSearch" type="text" , required>
-        </form>
-    </div>
-    <div class="main"></div>
-    <div class="spiner" hidden>loading..</div>
+  <div class="header">
+    <form class="fromSearch">
+      <button class="btnSearch">Search</button>
+      <input class="inputSearch" type="text" required />
+    </form>
+  </div>
 
-    <div class="footer">
-        <button class="btnPrevious">Previous</button>
-        <p class="numberPage">1</p>
-        <button class="btnNext">Next</button>
-    </div>
+  <div class="main"></div>
+  <div class="spiner" hidden>loading..</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.3/dist/simple-lightbox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
+  <div class="footer">
+    <button class="btnPrevious">Previous</button>
+    <p class="numberPage">Page 1</p>
+    <button class="btnNext">Next</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" hidden>
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img class="modal-img" src="" alt="" />
+      <p class="modal-author"></p>
+      <p class="modal-tags"></p>
+      <p class="modal-likes"></p>
+      <p class="modal-downloads"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
