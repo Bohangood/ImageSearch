@@ -80,6 +80,8 @@
 .spinner-wrapper {
  position: relative;
  left: 49%;
+  top: 50%;
+
 }
 
 .spinner-wrapper[hidden] {
@@ -96,6 +98,14 @@
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
 
 
 .modal {
@@ -105,7 +115,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.7);
-  display: flex; /* буде активний тільки після видалення hidden */
+  display: flex; 
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -147,43 +157,26 @@
 .close:hover {
   color: red;
 }
-
-@media (max-width: 320px) {
+.btnFavorite{
+  height: 28px;
+  margin-left: 5px;
+}
+@media (min-width: 1920px) {
   .main {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 8px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
   }
 
   .image-item {
     width: 100%;
-    height: 180px;
+    height: 220px;
   }
 
   .inputSearch {
-    width: 180px;
+    width: 320px;
   }
 }
-
-
-@media (max-width: 768px) {
-  .main {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 12px;
-  }
-
-  .image-item {
-    width: 100%;
-    height: 200px;
-  }
-
-  .inputSearch {
-    width: 250px;
-  }
-}
-
-
 @media (max-width: 1024px) {
   .main {
     grid-template-columns: repeat(3, 1fr);
@@ -204,19 +197,36 @@
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 768px) {
   .main {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
   }
 
   .image-item {
     width: 100%;
-    height: 220px;
+    height: 200px;
   }
 
   .inputSearch {
-    width: 320px;
+    width: 250px;
+  }
+}
+
+@media (max-width: 320px) {
+  .main {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .image-item {
+    width: 100%;
+    height: 180px;
+  }
+
+  .inputSearch {
+    width: 180px;
   }
 }

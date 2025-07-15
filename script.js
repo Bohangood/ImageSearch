@@ -9,6 +9,7 @@ const spinner = document.querySelector(".spinner-wrapper");
 const btnPrev = document.querySelector(".btnPrevious");
 const btnNext = document.querySelector(".btnNext");
 const pageNumberEl = document.querySelector(".numberPage");
+// const favorite = document.querySelector(".btnFavorite");
 
 const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal-img");
@@ -94,7 +95,7 @@ btnNext.addEventListener("click", () => {
   }
 });
 
-// Modal open logic
+// Modal open 
 gallery.addEventListener("click", (e) => {
   e.preventDefault();
   const link = e.target.closest("a");
