@@ -9,7 +9,7 @@ const spinner = document.querySelector(".spinner-wrapper");
 const btnPrev = document.querySelector(".btnPrevious");
 const btnNext = document.querySelector(".btnNext");
 const pageNumberEl = document.querySelector(".numberPage");
-// const favorite = document.querySelector(".btnFavorite");
+const favorite = document.querySelector(".btnFavorite");
 
 const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal-img");
@@ -19,6 +19,7 @@ const modalLikes = document.querySelector(".modal-likes");
 const modalDownloads = document.querySelector(".modal-downloads");
 const closeModal = document.querySelector(".close");
 
+let favorites = [];
 let currentPage = 1;
 let currentQuery = "";
 let totalPages = 1;
@@ -54,7 +55,7 @@ const loadImages = async (query, page = 1) => {
           data-downloads="${foto.downloads}">
           <img src="${foto.webformatURL}" alt="${foto.tags}" />
         </a>
-      `;
+        `;
       gallery.appendChild(div);
     });
 
