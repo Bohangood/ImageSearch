@@ -46,6 +46,9 @@ const loadImages = async (query, page = 1) => {
     data.hits.forEach((foto) => {
       const div = document.createElement("div");
       div.classList.add("image-item");
+
+      const isFavorite = favorites.includes(foto.id);
+      const star = isFavorite ? '★' : '☆';
       div.innerHTML = `
         <a 
           href="${foto.largeImageURL}" 
