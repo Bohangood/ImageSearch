@@ -50,6 +50,7 @@ const loadImages = async (query, page = 1) => {
       const isFavorite = favorites.includes(foto.id);
       const star = isFavorite ? '★' : '☆';
       div.innerHTML = `
+      <div class="image-wrapper">
         <a 
           href="${foto.largeImageURL}" 
           data-author="${foto.user}" 
@@ -58,6 +59,8 @@ const loadImages = async (query, page = 1) => {
           data-downloads="${foto.downloads}">
           <img src="${foto.webformatURL}" alt="${foto.tags}" />
         </a>
+        <span class="favorite-icon" data-id="${foto.id}">${star}</span>
+        </div>
         `;
       gallery.appendChild(div);
     });
@@ -101,6 +104,20 @@ btnNext.addEventListener("click", () => {
 
 // Modal open 
 gallery.addEventListener("click", (e) => {
+  const star = e.target.closest(".favorite-icon");
+  if (star){
+    const id = Number(star.dataset.id);
+    const index = favorites.indexOf(id);
+
+    if (index === -1){
+      favorites.push(id)
+      star.textContent = "★";
+    } else {
+      favorites.splice(index, 1);
+      star.textContent = "☆"
+    }
+    return
+  }
   e.preventDefault();
   const link = e.target.closest("a");
   if (!link) return;

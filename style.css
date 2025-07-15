@@ -161,6 +161,23 @@
   height: 28px;
   margin-left: 5px;
 }
+
+.image-wrapper {
+  position: relative;
+}
+.favorite-icon {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 20px;
+  color: gold;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s;
+}
+.favorite-icon:hover{
+  transform: scale(1.2);
+}
 @media (min-width: 1920px) {
   .main {
     grid-template-columns: repeat(5, 1fr);
